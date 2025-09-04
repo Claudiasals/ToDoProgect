@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8bec39b2df.js" crossorigin="anonymous"></script>
+
+    <head>
+        <title> ToDo List Design System </title>
+    </head>
+
+<body>
+
+    <div>
+        <title> LISTA </title>
+
+        <div>
+            <title> check box per attivita' da svolgere </title>
+            <div>
+                <!-- checkbox attività -->
+                <form @submit="addTask">
+
+                    <input type="checkbox" id="mioCheckbox" name="opzione1" value="sì">
+                    <input type="text" v-model="newTask" placeholder="Aggiungi attività" required>
+                  
+                    <!-- icona cestino -->
+                    <i class="fa-solid fa-trash-can"></i>
+
+                </form>
+                <button type="submit">+</button>
+
+            </div>
+
+        </div>
+
+        <div>
+            <!-- bottone per le categorie -->
+            <div> 
+               <p> category </p>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
