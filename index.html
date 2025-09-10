@@ -4,52 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="output.css">
     <script src="https://kit.fontawesome.com/8bec39b2df.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
     <title>To Do List</title>
-    <link href="./output.css" rel="stylesheet">
 </head>
 
 <body>
-    <!--Tehse are the buttons of categorys -->
-    <nav class="container_category">
-        <div class="container_category-sport"><i class="fa-solid fa-volleyball"></i>Sport</div>
-        <div class="container_category-work"><i class="fa-solid fa-briefcase"></i>Work</div>
-        <div class="container_category-home"><i class="fa-solid fa-house"></i>Home</div>
-        <!--This is neede to create new categorys -->
-        <div class="container_category-add"><i class="fa-solid fa-plus"></i>Add your category</div>
-    </nav>
+    <!--These are the buttons of categorys -->
+    <div>
+        <h1>To Do List</h1>
+    </div>
     <!--This is the parent of all list elements-->
     <div class="container">
-        <div class="container-box">
-            <h1>To Do Lista</h1>
-            <input type="text" v-model="newTask" placeholder="Cerca attivita" required>
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
         <!--Here will be shown only to do -->
         <div class="container-toDo">
             <h2>Elementi da fare</h2>
             <div class="list_check">
                 <!--Here will be printed only JS list-->
-            <div id="listed_fromJS">
                 <form @submit="addTask">
-                <input type="checkbox" id="mioCheckbox" name="opzione1" value="sì">
+                    <input type="checkbox" id="mioCheckbox" name="opzione1" value="sì">
+             
+                <!-- input Task inserimento nuova task -->
+                <input id="inputTask" type="text" v-model="newTask" placeholder="" required>
+        
+                <!-- cestino -->
+                <i id="delite" class="fa-solid fa-trash-can"></i>
+                <!-- bottone + -->
+                <button id="addTask" type="submit"><i class="fa-solid fa-plus"></i></button>
             </form>
             </div>
         </div>
-        <div class="list_trash"><i class="fa-solid fa-trash-can"></i></div>
-        <div class="add_activity">
-            <button type="submit"><i class="fa-solid fa-plus"></i></button></div>
-            <input type="text" v-model="newTask" placeholder="" required>
-        </div>
-    </div>
+
         <!--Here only listed done-->
-    <div class="container-list-done">
-        <h2>Elementi gia fatti</h2>
-        <!--Here only done stuff from JS -->
-        <div id="listed_fromJS-done"></div>
-    </div>
+        <div class="container-list-done">
+            <h2>Elementi gia fatti</h2>
+            <!--Here only done stuff from JS -->
+            <div id="listed_fromJS-done">
+                <ul id=""> </ul>
+            </div>
+        </div>
+        <script src="script.js"></script>
 </body>
 
 </html>
